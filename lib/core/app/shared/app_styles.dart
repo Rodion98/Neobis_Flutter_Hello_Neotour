@@ -45,6 +45,13 @@ class AppTextStyle {
     fontWeight: FontWeight.w900,
     height: 1.1935,
   );
+  static const s14w400 = TextStyle(
+    fontSize: 14,
+    color: AppColors.black,
+    fontFamily: FontFamily.sFProDisplay,
+    fontWeight: FontWeight.w400,
+    height: 1.1721,
+  );
 
   static const s16w500Whitr = TextStyle(
     fontSize: 16,
@@ -90,6 +97,13 @@ class AppTextStyle {
     fontFamily: FontFamily.sFProDisplay,
     fontWeight: FontWeight.w900,
     height: 1.1933,
+  );
+  static const s24w400 = TextStyle(
+    fontSize: 24,
+    color: AppColors.black,
+    fontFamily: FontFamily.sFProDisplay,
+    fontWeight: FontWeight.w400,
+    height: 1.1720,
   );
 
   static const s12w500 = TextStyle(

@@ -1,6 +1,6 @@
-// part of 'place_bloc.dart';
+part of 'place_bloc.dart';
 
-// @freezed
-// class PlaceEvent with _$PlaceEvent {
-//   const factory PlaceEvent.started() = _Started;
-// }
+@freezed
+class PlaceEvent with _$PlaceEvent {
+  const factory PlaceEvent.loading() = _LoadReviews;
+}

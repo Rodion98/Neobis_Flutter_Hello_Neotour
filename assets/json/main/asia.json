@@ -1,0 +1,44 @@
+[
+  {
+      "id": 3,
+      "name": "City Sightseeing Bus Tour",
+      "description": "Hop on a double-decker bus and see the city's top attractions",
+      "image_url": "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "price": 80.00,
+      "city": "London",
+      "country": "United Kingdom",
+      "continent": "United Kingdom",
+      "season": "Autumn",
+      "views": 200,
+      "created_at": "2024-04-20T02:09:49.76076",
+      "updated_at": "2024-04-20T03:13:28.567948"
+  },
+  {
+      "id": 2,
+      "name": "Cultural Heritage Tour",
+      "description": "Immerse yourself in local traditions and visit historical landmarks",
+      "image_url": "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "price": 150.00,
+      "city": "Kyoto",
+      "country": "Japan",
+      "continent": "Japan",
+      "season": "Autumn",
+      "views": 180,
+      "created_at": "2024-04-20T02:06:00.1475",
+      "updated_at": "2024-04-20T03:15:28.708619"
+  },
+  {
+      "id": 1,
+      "name": "Beach Getaway",
+      "description": "Relax on the sunny beaches and enjoy water sports activities",
+      "image_url": "https://images.pexels.com/photos/1670187/pexels-photo-1670187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "price": 250.00,
+      "city": "Tokyo",
+      "country": "Japan",
+      "continent": "Japan",
+      "season": "Spring",
+      "views": 320,
+      "created_at": "2024-04-20T02:05:15.065907",
+      "updated_at": "2024-04-20T03:17:48.874837"
+  }
+]

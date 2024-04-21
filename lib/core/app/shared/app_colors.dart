@@ -6,6 +6,11 @@ class AppColors {
   static const Color unActiveCarousel = Color(0xFFB9B1FF);
   static const Color primaryColor = Color(0xFF6A62B7);
   static const Color grey = Color(0xFFA0A0A0);
+  static const Color buttongrey = Color(0xFFF3F3F3);
+
+  static const Color greyTextField = Color(0xFF636363);
+  static const Color greyText = Color(0xFF888888);
+
   static const Color greenText = Color(0xFF43D049);
   static const Color whiteText = Color(0xFFFFFFFF);
   static const Color redText = Color(0xFFEB5757);
