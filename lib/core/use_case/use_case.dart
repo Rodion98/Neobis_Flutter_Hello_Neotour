@@ -1,3 +1,3 @@
-abstract class UseCase<TourEntity, Params> {
-  Future<TourEntity> call([int? index = 0]);
+abstract class UseCase<Type, Params> {
+  Future<Type> call(Params params);
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:neo_tour/core/app/shared/app_constants.dart';
 
 class CustomDropDown extends StatefulWidget {
-  CustomDropDown({
+  const CustomDropDown({
     super.key,
   });
 
@@ -10,24 +11,17 @@ class CustomDropDown extends StatefulWidget {
 }
 
 class _CustomDropDownState extends State<CustomDropDown> {
-  final List<String> iconPaths = [
-    'icons/flags/png100px/kg.png',
-    'icons/flags/png100px/kz.png',
-    'icons/flags/png100px/ru.png',
-    'icons/flags/png100px/es.png',
-    'icons/flags/png100px/it.png',
-    'icons/flags/png100px/eu.png',
-  ];
-
   String currentIconPath = 'icons/flags/png100px/kg.png';
 
   @override
   Widget build(BuildContext context) {
-    final List<DropdownMenuItem<String>> _dropDownMenu = iconPaths
+    final List<DropdownMenuItem<String>> dropDownMenu = Constants.iconPaths
         .map((String path) => DropdownMenuItem<String>(
               value: path,
               child: Container(
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(36)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(36),
+                  ),
                   child: Image.asset(
                     path,
                     package: 'country_icons',
@@ -38,7 +32,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
         .toList();
 
     return DropdownButton<String>(
-      items: _dropDownMenu,
+      items: dropDownMenu,
       value: currentIconPath,
       onChanged: (String? newPath) {
         setState(() {

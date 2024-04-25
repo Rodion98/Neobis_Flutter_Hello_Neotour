@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'place_bloc.dart';
+part of 'booking_bloc_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,118 +15,179 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$PlaceEvent {
+mixin _$BookingBlocEvent {
+  BookingModel get bookingModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loading,
+    required TResult Function(BookingModel bookingModel) post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
+    TResult? Function(BookingModel bookingModel)? post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
+    TResult Function(BookingModel bookingModel)? post,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadReviews value) loading,
+    required TResult Function(_Post value) post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_LoadReviews value)? loading,
+    TResult? Function(_Post value)? post,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadReviews value)? loading,
+    TResult Function(_Post value)? post,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BookingBlocEventCopyWith<BookingBlocEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PlaceEventCopyWith<$Res> {
-  factory $PlaceEventCopyWith(
-          PlaceEvent value, $Res Function(PlaceEvent) then) =
-      _$PlaceEventCopyWithImpl<$Res, PlaceEvent>;
+abstract class $BookingBlocEventCopyWith<$Res> {
+  factory $BookingBlocEventCopyWith(
+          BookingBlocEvent value, $Res Function(BookingBlocEvent) then) =
+      _$BookingBlocEventCopyWithImpl<$Res, BookingBlocEvent>;
+  @useResult
+  $Res call({BookingModel bookingModel});
+
+  $BookingModelCopyWith<$Res> get bookingModel;
 }
 
 /// @nodoc
-class _$PlaceEventCopyWithImpl<$Res, $Val extends PlaceEvent>
-    implements $PlaceEventCopyWith<$Res> {
-  _$PlaceEventCopyWithImpl(this._value, this._then);
+class _$BookingBlocEventCopyWithImpl<$Res, $Val extends BookingBlocEvent>
+    implements $BookingBlocEventCopyWith<$Res> {
+  _$BookingBlocEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bookingModel = null,
+  }) {
+    return _then(_value.copyWith(
+      bookingModel: null == bookingModel
+          ? _value.bookingModel
+          : bookingModel // ignore: cast_nullable_to_non_nullable
+              as BookingModel,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BookingModelCopyWith<$Res> get bookingModel {
+    return $BookingModelCopyWith<$Res>(_value.bookingModel, (value) {
+      return _then(_value.copyWith(bookingModel: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$LoadReviewsImplCopyWith<$Res> {
-  factory _$$LoadReviewsImplCopyWith(
-          _$LoadReviewsImpl value, $Res Function(_$LoadReviewsImpl) then) =
-      __$$LoadReviewsImplCopyWithImpl<$Res>;
+abstract class _$$PostImplCopyWith<$Res>
+    implements $BookingBlocEventCopyWith<$Res> {
+  factory _$$PostImplCopyWith(
+          _$PostImpl value, $Res Function(_$PostImpl) then) =
+      __$$PostImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({BookingModel bookingModel});
+
+  @override
+  $BookingModelCopyWith<$Res> get bookingModel;
 }
 
 /// @nodoc
-class __$$LoadReviewsImplCopyWithImpl<$Res>
-    extends _$PlaceEventCopyWithImpl<$Res, _$LoadReviewsImpl>
-    implements _$$LoadReviewsImplCopyWith<$Res> {
-  __$$LoadReviewsImplCopyWithImpl(
-      _$LoadReviewsImpl _value, $Res Function(_$LoadReviewsImpl) _then)
+class __$$PostImplCopyWithImpl<$Res>
+    extends _$BookingBlocEventCopyWithImpl<$Res, _$PostImpl>
+    implements _$$PostImplCopyWith<$Res> {
+  __$$PostImplCopyWithImpl(_$PostImpl _value, $Res Function(_$PostImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bookingModel = null,
+  }) {
+    return _then(_$PostImpl(
+      bookingModel: null == bookingModel
+          ? _value.bookingModel
+          : bookingModel // ignore: cast_nullable_to_non_nullable
+              as BookingModel,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$LoadReviewsImpl implements _LoadReviews {
-  const _$LoadReviewsImpl();
+class _$PostImpl implements _Post {
+  const _$PostImpl({required this.bookingModel});
+
+  @override
+  final BookingModel bookingModel;
 
   @override
   String toString() {
-    return 'PlaceEvent.loading()';
+    return 'BookingBlocEvent.post(bookingModel: $bookingModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadReviewsImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$PostImpl &&
+            (identical(other.bookingModel, bookingModel) ||
+                other.bookingModel == bookingModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, bookingModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PostImplCopyWith<_$PostImpl> get copyWith =>
+      __$$PostImplCopyWithImpl<_$PostImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() loading,
+    required TResult Function(BookingModel bookingModel) post,
   }) {
-    return loading();
+    return post(bookingModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
+    TResult? Function(BookingModel bookingModel)? post,
   }) {
-    return loading?.call();
+    return post?.call(bookingModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
+    TResult Function(BookingModel bookingModel)? post,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (post != null) {
+      return post(bookingModel);
     }
     return orElse();
   }
@@ -134,56 +195,63 @@ class _$LoadReviewsImpl implements _LoadReviews {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_LoadReviews value) loading,
+    required TResult Function(_Post value) post,
   }) {
-    return loading(this);
+    return post(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_LoadReviews value)? loading,
+    TResult? Function(_Post value)? post,
   }) {
-    return loading?.call(this);
+    return post?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LoadReviews value)? loading,
+    TResult Function(_Post value)? post,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (post != null) {
+      return post(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadReviews implements PlaceEvent {
-  const factory _LoadReviews() = _$LoadReviewsImpl;
+abstract class _Post implements BookingBlocEvent {
+  const factory _Post({required final BookingModel bookingModel}) = _$PostImpl;
+
+  @override
+  BookingModel get bookingModel;
+  @override
+  @JsonKey(ignore: true)
+  _$$PostImplCopyWith<_$PostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$PlaceState {
+mixin _$BookingBlocState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<ReviewEntity> reviews) success,
+    required TResult Function(int status) success,
     required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<ReviewEntity> reviews)? success,
+    TResult? Function(int status)? success,
     TResult? Function()? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<ReviewEntity> reviews)? success,
+    TResult Function(int status)? success,
     TResult Function()? failure,
     required TResult orElse(),
   }) =>
@@ -213,16 +281,16 @@ mixin _$PlaceState {
 }
 
 /// @nodoc
-abstract class $PlaceStateCopyWith<$Res> {
-  factory $PlaceStateCopyWith(
-          PlaceState value, $Res Function(PlaceState) then) =
-      _$PlaceStateCopyWithImpl<$Res, PlaceState>;
+abstract class $BookingBlocStateCopyWith<$Res> {
+  factory $BookingBlocStateCopyWith(
+          BookingBlocState value, $Res Function(BookingBlocState) then) =
+      _$BookingBlocStateCopyWithImpl<$Res, BookingBlocState>;
 }
 
 /// @nodoc
-class _$PlaceStateCopyWithImpl<$Res, $Val extends PlaceState>
-    implements $PlaceStateCopyWith<$Res> {
-  _$PlaceStateCopyWithImpl(this._value, this._then);
+class _$BookingBlocStateCopyWithImpl<$Res, $Val extends BookingBlocState>
+    implements $BookingBlocStateCopyWith<$Res> {
+  _$BookingBlocStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -239,7 +307,7 @@ abstract class _$$PlaceStateLoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$PlaceStateLoadingImplCopyWithImpl<$Res>
-    extends _$PlaceStateCopyWithImpl<$Res, _$PlaceStateLoadingImpl>
+    extends _$BookingBlocStateCopyWithImpl<$Res, _$PlaceStateLoadingImpl>
     implements _$$PlaceStateLoadingImplCopyWith<$Res> {
   __$$PlaceStateLoadingImplCopyWithImpl(_$PlaceStateLoadingImpl _value,
       $Res Function(_$PlaceStateLoadingImpl) _then)
@@ -253,7 +321,7 @@ class _$PlaceStateLoadingImpl implements _PlaceStateLoading {
 
   @override
   String toString() {
-    return 'PlaceState.loading()';
+    return 'BookingBlocState.loading()';
   }
 
   @override
@@ -269,7 +337,7 @@ class _$PlaceStateLoadingImpl implements _PlaceStateLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<ReviewEntity> reviews) success,
+    required TResult Function(int status) success,
     required TResult Function() failure,
   }) {
     return loading();
@@ -279,7 +347,7 @@ class _$PlaceStateLoadingImpl implements _PlaceStateLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<ReviewEntity> reviews)? success,
+    TResult? Function(int status)? success,
     TResult? Function()? failure,
   }) {
     return loading?.call();
@@ -289,7 +357,7 @@ class _$PlaceStateLoadingImpl implements _PlaceStateLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<ReviewEntity> reviews)? success,
+    TResult Function(int status)? success,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -334,7 +402,7 @@ class _$PlaceStateLoadingImpl implements _PlaceStateLoading {
   }
 }
 
-abstract class _PlaceStateLoading implements PlaceState {
+abstract class _PlaceStateLoading implements BookingBlocState {
   const factory _PlaceStateLoading() = _$PlaceStateLoadingImpl;
 }
 
@@ -344,12 +412,12 @@ abstract class _$$PlaceStateSuccessImplCopyWith<$Res> {
           $Res Function(_$PlaceStateSuccessImpl) then) =
       __$$PlaceStateSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ReviewEntity> reviews});
+  $Res call({int status});
 }
 
 /// @nodoc
 class __$$PlaceStateSuccessImplCopyWithImpl<$Res>
-    extends _$PlaceStateCopyWithImpl<$Res, _$PlaceStateSuccessImpl>
+    extends _$BookingBlocStateCopyWithImpl<$Res, _$PlaceStateSuccessImpl>
     implements _$$PlaceStateSuccessImplCopyWith<$Res> {
   __$$PlaceStateSuccessImplCopyWithImpl(_$PlaceStateSuccessImpl _value,
       $Res Function(_$PlaceStateSuccessImpl) _then)
@@ -358,13 +426,13 @@ class __$$PlaceStateSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? reviews = null,
+    Object? status = null,
   }) {
     return _then(_$PlaceStateSuccessImpl(
-      reviews: null == reviews
-          ? _value._reviews
-          : reviews // ignore: cast_nullable_to_non_nullable
-              as List<ReviewEntity>,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -372,20 +440,14 @@ class __$$PlaceStateSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PlaceStateSuccessImpl implements _PlaceStateSuccess {
-  const _$PlaceStateSuccessImpl({required final List<ReviewEntity> reviews})
-      : _reviews = reviews;
+  const _$PlaceStateSuccessImpl({required this.status});
 
-  final List<ReviewEntity> _reviews;
   @override
-  List<ReviewEntity> get reviews {
-    if (_reviews is EqualUnmodifiableListView) return _reviews;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_reviews);
-  }
+  final int status;
 
   @override
   String toString() {
-    return 'PlaceState.success(reviews: $reviews)';
+    return 'BookingBlocState.success(status: $status)';
   }
 
   @override
@@ -393,12 +455,11 @@ class _$PlaceStateSuccessImpl implements _PlaceStateSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PlaceStateSuccessImpl &&
-            const DeepCollectionEquality().equals(other._reviews, _reviews));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_reviews));
+  int get hashCode => Object.hash(runtimeType, status);
 
   @JsonKey(ignore: true)
   @override
@@ -411,32 +472,32 @@ class _$PlaceStateSuccessImpl implements _PlaceStateSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<ReviewEntity> reviews) success,
+    required TResult Function(int status) success,
     required TResult Function() failure,
   }) {
-    return success(reviews);
+    return success(status);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<ReviewEntity> reviews)? success,
+    TResult? Function(int status)? success,
     TResult? Function()? failure,
   }) {
-    return success?.call(reviews);
+    return success?.call(status);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<ReviewEntity> reviews)? success,
+    TResult Function(int status)? success,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(reviews);
+      return success(status);
     }
     return orElse();
   }
@@ -476,11 +537,11 @@ class _$PlaceStateSuccessImpl implements _PlaceStateSuccess {
   }
 }
 
-abstract class _PlaceStateSuccess implements PlaceState {
-  const factory _PlaceStateSuccess(
-      {required final List<ReviewEntity> reviews}) = _$PlaceStateSuccessImpl;
+abstract class _PlaceStateSuccess implements BookingBlocState {
+  const factory _PlaceStateSuccess({required final int status}) =
+      _$PlaceStateSuccessImpl;
 
-  List<ReviewEntity> get reviews;
+  int get status;
   @JsonKey(ignore: true)
   _$$PlaceStateSuccessImplCopyWith<_$PlaceStateSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -495,7 +556,7 @@ abstract class _$$PlaceStateFailureImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$PlaceStateFailureImplCopyWithImpl<$Res>
-    extends _$PlaceStateCopyWithImpl<$Res, _$PlaceStateFailureImpl>
+    extends _$BookingBlocStateCopyWithImpl<$Res, _$PlaceStateFailureImpl>
     implements _$$PlaceStateFailureImplCopyWith<$Res> {
   __$$PlaceStateFailureImplCopyWithImpl(_$PlaceStateFailureImpl _value,
       $Res Function(_$PlaceStateFailureImpl) _then)
@@ -509,7 +570,7 @@ class _$PlaceStateFailureImpl implements _PlaceStateFailure {
 
   @override
   String toString() {
-    return 'PlaceState.failure()';
+    return 'BookingBlocState.failure()';
   }
 
   @override
@@ -525,7 +586,7 @@ class _$PlaceStateFailureImpl implements _PlaceStateFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<ReviewEntity> reviews) success,
+    required TResult Function(int status) success,
     required TResult Function() failure,
   }) {
     return failure();
@@ -535,7 +596,7 @@ class _$PlaceStateFailureImpl implements _PlaceStateFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<ReviewEntity> reviews)? success,
+    TResult? Function(int status)? success,
     TResult? Function()? failure,
   }) {
     return failure?.call();
@@ -545,7 +606,7 @@ class _$PlaceStateFailureImpl implements _PlaceStateFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<ReviewEntity> reviews)? success,
+    TResult Function(int status)? success,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -590,6 +651,6 @@ class _$PlaceStateFailureImpl implements _PlaceStateFailure {
   }
 }
 
-abstract class _PlaceStateFailure implements PlaceState {
+abstract class _PlaceStateFailure implements BookingBlocState {
   const factory _PlaceStateFailure() = _$PlaceStateFailureImpl;
 }

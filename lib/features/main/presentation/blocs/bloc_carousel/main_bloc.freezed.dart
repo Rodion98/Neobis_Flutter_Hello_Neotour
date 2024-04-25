@@ -223,21 +223,26 @@ mixin _$MainState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<TourEntity> carouselTours) success,
+    required TResult Function(
+            List<TourEntity> carouselTours, List<Tab> tabs, int index)
+        success,
     required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<TourEntity> carouselTours)? success,
+    TResult? Function(
+            List<TourEntity> carouselTours, List<Tab> tabs, int index)?
+        success,
     TResult? Function()? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<TourEntity> carouselTours)? success,
+    TResult Function(List<TourEntity> carouselTours, List<Tab> tabs, int index)?
+        success,
     TResult Function()? failure,
     required TResult orElse(),
   }) =>
@@ -322,7 +327,9 @@ class _$MainStateLoadingImpl implements _MainStateLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<TourEntity> carouselTours) success,
+    required TResult Function(
+            List<TourEntity> carouselTours, List<Tab> tabs, int index)
+        success,
     required TResult Function() failure,
   }) {
     return loading();
@@ -332,7 +339,9 @@ class _$MainStateLoadingImpl implements _MainStateLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<TourEntity> carouselTours)? success,
+    TResult? Function(
+            List<TourEntity> carouselTours, List<Tab> tabs, int index)?
+        success,
     TResult? Function()? failure,
   }) {
     return loading?.call();
@@ -342,7 +351,8 @@ class _$MainStateLoadingImpl implements _MainStateLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<TourEntity> carouselTours)? success,
+    TResult Function(List<TourEntity> carouselTours, List<Tab> tabs, int index)?
+        success,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
@@ -397,7 +407,7 @@ abstract class _$$MainStateSuccessImplCopyWith<$Res> {
           $Res Function(_$MainStateSuccessImpl) then) =
       __$$MainStateSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<TourEntity> carouselTours});
+  $Res call({List<TourEntity> carouselTours, List<Tab> tabs, int index});
 }
 
 /// @nodoc
@@ -412,12 +422,22 @@ class __$$MainStateSuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? carouselTours = null,
+    Object? tabs = null,
+    Object? index = null,
   }) {
     return _then(_$MainStateSuccessImpl(
       carouselTours: null == carouselTours
           ? _value._carouselTours
           : carouselTours // ignore: cast_nullable_to_non_nullable
               as List<TourEntity>,
+      tabs: null == tabs
+          ? _value._tabs
+          : tabs // ignore: cast_nullable_to_non_nullable
+              as List<Tab>,
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -425,8 +445,12 @@ class __$$MainStateSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MainStateSuccessImpl implements _MainStateSuccess {
-  const _$MainStateSuccessImpl({required final List<TourEntity> carouselTours})
-      : _carouselTours = carouselTours;
+  const _$MainStateSuccessImpl(
+      {required final List<TourEntity> carouselTours,
+      required final List<Tab> tabs,
+      required this.index})
+      : _carouselTours = carouselTours,
+        _tabs = tabs;
 
   final List<TourEntity> _carouselTours;
   @override
@@ -436,9 +460,20 @@ class _$MainStateSuccessImpl implements _MainStateSuccess {
     return EqualUnmodifiableListView(_carouselTours);
   }
 
+  final List<Tab> _tabs;
+  @override
+  List<Tab> get tabs {
+    if (_tabs is EqualUnmodifiableListView) return _tabs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tabs);
+  }
+
+  @override
+  final int index;
+
   @override
   String toString() {
-    return 'MainState.success(carouselTours: $carouselTours)';
+    return 'MainState.success(carouselTours: $carouselTours, tabs: $tabs, index: $index)';
   }
 
   @override
@@ -447,12 +482,17 @@ class _$MainStateSuccessImpl implements _MainStateSuccess {
         (other.runtimeType == runtimeType &&
             other is _$MainStateSuccessImpl &&
             const DeepCollectionEquality()
-                .equals(other._carouselTours, _carouselTours));
+                .equals(other._carouselTours, _carouselTours) &&
+            const DeepCollectionEquality().equals(other._tabs, _tabs) &&
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_carouselTours));
+      runtimeType,
+      const DeepCollectionEquality().hash(_carouselTours),
+      const DeepCollectionEquality().hash(_tabs),
+      index);
 
   @JsonKey(ignore: true)
   @override
@@ -465,32 +505,37 @@ class _$MainStateSuccessImpl implements _MainStateSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<TourEntity> carouselTours) success,
+    required TResult Function(
+            List<TourEntity> carouselTours, List<Tab> tabs, int index)
+        success,
     required TResult Function() failure,
   }) {
-    return success(carouselTours);
+    return success(carouselTours, tabs, index);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<TourEntity> carouselTours)? success,
+    TResult? Function(
+            List<TourEntity> carouselTours, List<Tab> tabs, int index)?
+        success,
     TResult? Function()? failure,
   }) {
-    return success?.call(carouselTours);
+    return success?.call(carouselTours, tabs, index);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<TourEntity> carouselTours)? success,
+    TResult Function(List<TourEntity> carouselTours, List<Tab> tabs, int index)?
+        success,
     TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(carouselTours);
+      return success(carouselTours, tabs, index);
     }
     return orElse();
   }
@@ -532,9 +577,13 @@ class _$MainStateSuccessImpl implements _MainStateSuccess {
 
 abstract class _MainStateSuccess implements MainState {
   const factory _MainStateSuccess(
-      {required final List<TourEntity> carouselTours}) = _$MainStateSuccessImpl;
+      {required final List<TourEntity> carouselTours,
+      required final List<Tab> tabs,
+      required final int index}) = _$MainStateSuccessImpl;
 
   List<TourEntity> get carouselTours;
+  List<Tab> get tabs;
+  int get index;
   @JsonKey(ignore: true)
   _$$MainStateSuccessImplCopyWith<_$MainStateSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -579,7 +628,9 @@ class _$MainStateFailureImpl implements _MainStateFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<TourEntity> carouselTours) success,
+    required TResult Function(
+            List<TourEntity> carouselTours, List<Tab> tabs, int index)
+        success,
     required TResult Function() failure,
   }) {
     return failure();
@@ -589,7 +640,9 @@ class _$MainStateFailureImpl implements _MainStateFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<TourEntity> carouselTours)? success,
+    TResult? Function(
+            List<TourEntity> carouselTours, List<Tab> tabs, int index)?
+        success,
     TResult? Function()? failure,
   }) {
     return failure?.call();
@@ -599,7 +652,8 @@ class _$MainStateFailureImpl implements _MainStateFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<TourEntity> carouselTours)? success,
+    TResult Function(List<TourEntity> carouselTours, List<Tab> tabs, int index)?
+        success,
     TResult Function()? failure,
     required TResult orElse(),
   }) {

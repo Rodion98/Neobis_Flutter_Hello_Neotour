@@ -1,4 +1,3 @@
-// ignore: must_be_immutable
 import 'package:auto_route/auto_route.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -7,22 +6,17 @@ import 'package:neo_tour/core/app/io_ui.dart';
 import 'package:neo_tour/core/app/router/router.dart';
 import 'package:neo_tour/features/main/presentation/blocs/bloc_carousel/main_bloc.dart';
 
-// ignore: must_be_immutable
-class BuildCarousel extends StatefulWidget {
-  BuildCarousel({
+class CarouselWidget extends StatefulWidget {
+  const CarouselWidget({
     super.key,
-    required CarouselController controller,
-    required int current,
   });
 
-  late int _current = 0;
-
   @override
-  State<BuildCarousel> createState() => _BuildCarouselState();
+  State<CarouselWidget> createState() => _CarouselWidgetState();
 }
 
-class _BuildCarouselState extends State<BuildCarousel> {
-  final CarouselController _controller = CarouselController();
+class _CarouselWidgetState extends State<CarouselWidget> {
+  late int _current = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +31,13 @@ class _BuildCarouselState extends State<BuildCarousel> {
               child: CircularProgressIndicator(),
             );
           },
-          success: (carousel) => (Column(
+          success: (carousel, category, i) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CarouselSlider(
                 items: carousel
                     .map((e) => Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          padding: const EdgeInsets.symmetric(horizontal: AppProps.kPageMargin),
                           child: GestureDetector(
                             onTap: () {
                               AutoRouter.of(context).popAndPush(
@@ -52,8 +46,8 @@ class _BuildCarouselState extends State<BuildCarousel> {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(19.0),
-                                image: DecorationImage(image: NetworkImage(e.image_url), fit: BoxFit.cover),
+                                borderRadius: BorderRadius.circular(AppProps.kTwentyMargin),
+                                image: DecorationImage(image: NetworkImage(e.image_url!), fit: BoxFit.cover),
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
@@ -63,16 +57,16 @@ class _BuildCarouselState extends State<BuildCarousel> {
                                     decoration: BoxDecoration(
                                       color: AppColors.grey.withOpacity(0.5),
                                       borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(19),
-                                        bottomRight: Radius.circular(19),
+                                        bottomLeft: Radius.circular(AppProps.kTwentyMargin),
+                                        bottomRight: Radius.circular(AppProps.kTwentyMargin),
                                       ),
                                     ),
                                     child: Row(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(16.0),
-                                          child:
-                                              Text(e.name, style: AppTextStyle.s20w600White, textAlign: TextAlign.left),
+                                          padding: const EdgeInsets.all(AppProps.kPageMargin),
+                                          child: Text(e.name!,
+                                              style: AppTextStyle.s20w600White, textAlign: TextAlign.left),
                                         ),
                                       ],
                                     ),
@@ -88,29 +82,27 @@ class _BuildCarouselState extends State<BuildCarousel> {
                     enableInfiniteScroll: false,
                     onPageChanged: (index, reason) {
                       setState(() {
-                        widget._current = index;
+                        _current = index;
                       });
                     }),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: carousel.asMap().entries.map((entry) {
-                  return GestureDetector(
-                    onTap: () => _controller.animateToPage(entry.key),
-                    child: Container(
-                      width: widget._current == entry.key ? 23 : 7.0,
-                      height: 7.0,
-                      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 3.0),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          shape: BoxShape.rectangle,
-                          color: widget._current == entry.key ? AppColors.activeCarousel : AppColors.unActiveCarousel),
-                    ),
+                  return Container(
+                    width: _current == entry.key ? 23 : 7.0,
+                    height: 7.0,
+                    margin: const EdgeInsets.symmetric(
+                        vertical: AppProps.kSmallMargin, horizontal: AppProps.kSmallMarginX2),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        shape: BoxShape.rectangle,
+                        color: _current == entry.key ? AppColors.activeCarousel : AppColors.unActiveCarousel),
                   );
                 }).toList(),
               ),
             ],
-          )),
+          ),
         );
       },
     );

@@ -1,3 +1,3 @@
 abstract class Mapper<Entity, Model> {
-  Entity mapper(Model model);
+  Entity toEntity(Model model);
 }

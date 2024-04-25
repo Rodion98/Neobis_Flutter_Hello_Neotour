@@ -4,7 +4,8 @@ import 'package:neo_tour/core/app/dependencies/di.dart';
 import 'package:neo_tour/core/app/router/router.dart';
 import 'package:neo_tour/features/main/presentation/blocs/bloc_carousel/main_bloc.dart';
 import 'package:neo_tour/features/main/presentation/blocs/bloc_grid_view/grid_view_bloc.dart';
-import 'package:neo_tour/features/place/presentation/bloc/place_bloc.dart';
+import 'package:neo_tour/features/place/presentation/bloc/booking_bloc/booking_bloc_bloc.dart';
+import 'package:neo_tour/features/place/presentation/bloc/place_bloc/place_bloc.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt<PlaceBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<BookingBlocBloc>(),
         ),
       ],
       child: MaterialApp.router(
